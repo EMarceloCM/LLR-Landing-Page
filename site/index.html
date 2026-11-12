@@ -1,0 +1,492 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Linguas Discens · estudo de idiomas com meta semanal</title>
+<meta name="description" content="App Android que organiza o estudo de vários idiomas em torno de uma meta semanal de horas. Mostra quanto falta hoje, redistribui o que ficou para trás e acompanha cada idioma até o fim da rota.">
+<meta name="theme-color" content="#FBF7F2">
+<meta property="og:type" content="website">
+<meta property="og:locale" content="pt_BR">
+<meta property="og:title" content="Linguas Discens">
+<meta property="og:description" content="Estude vários idiomas sem fazer conta todo dia. Você define as horas da semana e o app mostra quanto falta hoje.">
+<link rel="icon" href="favicon.svg" type="image/svg+xml">
+<link rel="icon" href="icon.png" type="image/png" sizes="1024x1024">
+<link rel="apple-touch-icon" href="icon.png">
+<link rel="preload" href="fonts/figtree-latin.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="fonts/bricolage-grotesque-latin.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<header class="site-header">
+<nav class="wrap nav" aria-label="Principal">
+<a class="brand" href="#topo">
+<svg width="40" height="40" viewBox="0 0 100 100" aria-hidden="true"><rect width="100" height="100" rx="24" fill="#F26B1D"/><g transform="translate(50 50) scale(0.8) translate(-44 -51)"><path d="M34 80 C12 72 8 42 22 26 C32 16 46 20 37 32" fill="none" stroke="#FFF4EC" stroke-width="15" stroke-linecap="round"/><ellipse cx="46" cy="64" rx="17" ry="20" transform="rotate(-20 46 64)" fill="#FFF4EC"/><circle cx="41" cy="72" r="13" fill="#FFF4EC"/><ellipse cx="51" cy="85" rx="13" ry="4.5" fill="#FFF4EC"/><circle cx="60" cy="38" r="13" fill="#FFF4EC"/><ellipse cx="70" cy="42" rx="8" ry="6.5" fill="#FFF4EC"/><path d="M51 31 L50 13 Q51 9 54 11 L65 27 Z" fill="#FFF4EC"/><ellipse cx="62" cy="57" rx="8" ry="3.6" transform="rotate(25 62 57)" fill="#FFF4EC"/><circle cx="64.5" cy="36" r="2.6" fill="#1C2B4A"/><circle cx="77.5" cy="41" r="1.8" fill="#1C2B4A"/><ellipse cx="72" cy="63" rx="5.5" ry="6.5" fill="#1C2B4A"/><ellipse cx="72" cy="57" rx="6.8" ry="3.6" fill="#1C2B4A"/><rect x="71.2" y="51" width="1.6" height="3.5" rx="0.8" fill="#1C2B4A"/></g></svg>
+<span>Linguas Discens</span>
+</a>
+<div class="nav-links">
+<a href="#como-funciona">Como funciona</a>
+<a href="#pesquisa">Por que funciona</a>
+<a href="#recursos">Recursos</a>
+<a href="#perguntas">Perguntas</a>
+<a class="nav-cta" href="#baixar">Baixar<span class="nav-cta-long"> para Android</span></a>
+</div>
+</nav>
+</header>
+
+<main id="topo">
+
+<!-- Hero -->
+<section class="wrap hero" aria-labelledby="hero-titulo">
+<div class="hero-copy">
+<p class="kicker">Do latim: aprendendo línguas</p>
+<h1 id="hero-titulo">Estude vários idiomas <span>sem fazer conta todo dia.</span></h1>
+<p class="hero-text">Você escolhe quantas horas quer estudar na semana, e o Linguas Discens divide isso pelos dias. Ele mostra quanto falta hoje, espalha o que ficou para trás pelos dias seguintes e acompanha cada idioma até o fim da rota.</p>
+<div class="actions">
+<a class="btn btn-primary" href="#baixar">
+<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><path d="M7 10l5 5 5-5"/><path d="M12 15V3"/></svg>
+Baixar o APK</a>
+<a class="btn btn-secondary" href="#como-funciona">Ver como funciona</a>
+</div>
+<dl class="facts">
+<div><dt>Para registrar</dt><dd>2 toques</dd></div>
+<div><dt>Conta ou internet</dt><dd>Nenhuma</dd></div>
+<div><dt>Idiomas na rota sugerida</dt><dd>8</dd></div>
+</dl>
+</div>
+
+<div class="hero-visual">
+<div class="phone-stage">
+<div class="phone">
+<div class="screen" role="img" aria-label="Tela Hoje do aplicativo">
+<div class="screen-head">
+<span class="screen-date">Quinta, 21 de janeiro</span>
+<span class="screen-title">Hoje</span>
+</div>
+<div class="card goal-card">
+<div class="ring">
+<svg width="92" height="92" viewBox="0 0 92 92" aria-hidden="true"><circle cx="46" cy="46" r="39" fill="none" stroke="#F3EEE7" stroke-width="9"/><circle cx="46" cy="46" r="39" fill="none" stroke="#F26B1D" stroke-width="9" stroke-linecap="round" stroke-dasharray="89.3 245.0" transform="rotate(-90 46 46)"/></svg>
+<div class="ring-label"><b>1h01</b><small>faltam hoje</small></div>
+</div>
+<div class="goal-info">
+<div><div class="mini-label">Meta de hoje</div><div class="mini-value">1h36</div><div class="mini-note">+10 min: segunda sem estudo</div></div>
+<div class="mini-rule"></div>
+<div><div class="mini-label">Semana</div><div class="mini-week">4h11 <span>de 10h</span></div><div class="mini-bar"><div></div></div></div>
+</div>
+</div>
+<div class="card done-card">
+<div class="done-head">Feito hoje <span>· 35 min</span></div>
+<div class="chips">
+<span class="chip chip--ok"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg>Anki 15 min · piso</span>
+<span class="chip">Leitura 20 min</span>
+</div>
+</div>
+<div class="suggest-title">Sugestão para os 61 min</div>
+<div class="card suggest-card">
+<div class="suggest-row">
+<span class="suggest-icon suggest-icon--hot"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 20h9"/><path d="M16.5 3.5a2.12 2.12 0 0 1 3 3L7 19l-4 1 1-4z"/></svg></span>
+<div class="suggest-text"><b>Composição</b><small>Latim · abaixo do alvo da semana</small></div>
+<span class="suggest-min">15 min</span>
+</div>
+<div class="suggest-row">
+<span class="suggest-icon"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M2 4h6a4 4 0 0 1 4 4v13a3 3 0 0 0-3-3H2zM22 4h-6a4 4 0 0 0-4 4v13a3 3 0 0 1 3-3h7z"/></svg></span>
+<div class="suggest-text"><b>Leitura</b><small>Latim · fecha a meta de hoje</small></div>
+<span class="suggest-min">46 min</span>
+</div>
+</div>
+<div class="tabbar">
+<span class="tab-on">Hoje</span>
+<span>Semana</span>
+<span class="tab-cta">Estudar</span>
+<span>Progresso</span>
+<span>Idiomas</span>
+</div>
+</div>
+</div>
+
+<!-- Notificação flutuante -->
+<div class="float-notif" aria-hidden="true">
+<div class="notif-app">Linguas Discens · 19:00</div>
+<div class="notif-text">Faltam 1h01 hoje. Começa com 25 min de leitura?</div>
+<div class="notif-actions"><span>Iniciar 25 min</span><span>Marcar Anki feito</span></div>
+</div>
+
+<!-- Selo de nível -->
+<div class="float-level" aria-hidden="true">
+<small>Latim · grau 3</small>
+<b>Lēctor</b>
+<span>O próximo vem com mais 61 h de latim.</span>
+</div>
+</div>
+</div>
+</section>
+
+<!-- Como funciona -->
+<section id="como-funciona" class="band" aria-labelledby="como-titulo">
+<div class="wrap how">
+<div class="section-head">
+<div class="stack-16 how-head-title">
+<p class="eyebrow">01 · Como funciona</p>
+<h2 id="como-titulo" class="h2">Pulou um dia? A semana se reorganiza sozinha.</h2>
+</div>
+<p class="lead how-head-text">Toda vez que você registra uma sessão, e de novo à meia-noite, o app refaz a meta de hoje com o que falta e os dias que sobram. O que ficou para trás vira alguns minutos a mais nos próximos dias.</p>
+</div>
+
+<div class="how-body">
+<!-- Gráfico da semana -->
+<figure class="week">
+<div class="week-head">
+<span class="display">Semana de 18 a 24 jan</span>
+<span class="week-total">4h11 <span>de 10h</span></span>
+</div>
+<div class="bars" role="img" aria-label="Barras por dia: segunda sem estudo, terça 2h00, quarta 1h36, quinta 35 minutos até agora, sexta a domingo com 1h36 planejadas">
+<div class="bar"><div class="bar-track"><div class="bar-fill" style="height:0;background:#F3EEE7"></div><div class="bar-goal" style="bottom:107px"></div></div><div class="bar-label"><span class="bar-day">Seg</span><span class="bar-done">sem estudo</span><span class="bar-meta">meta 1h26</span></div></div>
+<div class="bar"><div class="bar-track"><div class="bar-fill" style="height:150px;background:#2F9E6B"></div><div class="bar-goal" style="bottom:124px"></div></div><div class="bar-label"><span class="bar-day">Ter</span><span class="bar-done">2h00</span><span class="bar-meta">meta 1h40</span></div></div>
+<div class="bar"><div class="bar-track"><div class="bar-fill" style="height:120px;background:#2F9E6B"></div><div class="bar-goal" style="bottom:119px"></div></div><div class="bar-label"><span class="bar-day">Qua</span><span class="bar-done">1h36</span><span class="bar-meta">meta 1h36</span></div></div>
+<div class="bar"><div class="bar-track"><div class="bar-fill" style="height:44px;background:#F26B1D"></div><div class="bar-goal" style="bottom:119px"></div></div><div class="bar-label"><span class="bar-day bar-day--today">Qui · hoje</span><span class="bar-done">35 min</span><span class="bar-meta">meta 1h36</span></div></div>
+<div class="bar"><div class="bar-track"><div class="bar-fill" style="height:120px;background:#E9E1D6"></div><div class="bar-goal" style="bottom:119px"></div></div><div class="bar-label"><span class="bar-day">Sex</span><span class="bar-done">–</span><span class="bar-meta">meta 1h36</span></div></div>
+<div class="bar"><div class="bar-track"><div class="bar-fill" style="height:120px;background:#E9E1D6"></div><div class="bar-goal" style="bottom:119px"></div></div><div class="bar-label"><span class="bar-day">Sáb</span><span class="bar-done">–</span><span class="bar-meta">meta 1h36</span></div></div>
+<div class="bar"><div class="bar-track"><div class="bar-fill" style="height:120px;background:#E9E1D6"></div><div class="bar-goal" style="bottom:119px"></div></div><div class="bar-label"><span class="bar-day">Dom</span><span class="bar-done">–</span><span class="bar-meta">meta 1h36</span></div></div>
+</div>
+<figcaption class="legend">
+<span><i style="background:#2F9E6B"></i>Meta do dia cumprida</span>
+<span><i style="background:#F26B1D"></i>Hoje, em andamento</span>
+<span><i class="line"></i>Meta recalculada</span>
+</figcaption>
+</figure>
+
+<!-- Passos -->
+<ol class="steps">
+<li>
+<span class="step-n">1</span>
+<div><h3>Defina as horas da semana</h3><p>Diga quantas horas quer estudar e quanto pesa cada dia. Folga tem peso 0; sábado livre pode valer mais.</p></div>
+</li>
+<li>
+<span class="step-n">2</span>
+<div><h3>Estude e registre em dois toques</h3><p>O botão Estudar aparece em todas as telas e já vem com o último idioma e a última atividade.</p></div>
+</li>
+<li>
+<span class="step-n">3</span>
+<div><h3>Veja quanto falta hoje</h3><p class="step-pre">A conta é esta, e dá para conferir:</p>
+<p class="formula">meta de hoje = (meta da semana − feito antes de hoje) × peso de hoje ÷ soma dos pesos até domingo</p></div>
+</li>
+</ol>
+</div>
+</div>
+</section>
+
+<!-- Por que funciona -->
+<section id="pesquisa" aria-labelledby="pesquisa-titulo">
+<div class="wrap research">
+<div class="section-head">
+<div class="stack-16 research-head-title">
+<p class="eyebrow">02 · Por que funciona</p>
+<h2 id="pesquisa-titulo" class="h2">Cada regra do app tem um estudo por trás.</h2>
+</div>
+<p class="lead research-head-text">As regras do app vêm de pesquisas sobre memória, hábito e metas. Abaixo, cada estudo e o que ele mudou no app.</p>
+</div>
+
+<div class="studies">
+
+<article class="study">
+<div class="study-num">317<span>experimentos</span></div>
+<div class="study-body">
+<h3>Estudo espalhado fixa mais que estudo concentrado.</h3>
+<p>Na maior revisão sobre o tema, o mesmo tempo de estudo dividido em vários dias fez as pessoas lembrarem mais do que quando foi feito de uma vez só.</p>
+<p class="cite">Cepeda et al. (2006), Psychological Bulletin</p>
+</div>
+<div class="in-app">
+<p class="in-app-label">No app</p>
+<p>A meta é da semana e se divide pelos dias. Cinco dias seguidos com 1 h valem uma conquista; maratonas de 5 h, não.</p>
+</div>
+</article>
+
+<article class="study">
+<div class="study-num">63%<span>contra 20% de acertos</span></div>
+<div class="study-body">
+<h3>Misturar tipos de prática rende mais que repetir um só.</h3>
+<p>Uma semana depois, quem praticou com exercícios intercalados acertou 63% do teste. Quem praticou em blocos de um tipo só acertou 20%.</p>
+<p class="cite">Rohrer e Taylor (2007), Instructional Science</p>
+</div>
+<div class="in-app">
+<p class="in-app-label">No app</p>
+<p>Cada fase tem uma mistura-alvo de Anki, gramática, leitura, escuta e fala. Minutos na atividade abaixo do alvo valem 50% mais XP.</p>
+</div>
+</article>
+
+<article class="study">
+<div class="study-num">66<span>dias para virar hábito</span></div>
+<div class="study-body">
+<h3>Perder um dia não desfaz um hábito.</h3>
+<p>Foi o tempo mediano até um comportamento diário ficar automático. E pular um dia no meio do caminho não atrapalhou.</p>
+<p class="cite">Lally et al. (2010), European Journal of Social Psychology</p>
+</div>
+<div class="in-app">
+<p class="in-app-label">No app</p>
+<p>A sequência principal conta semanas cumpridas, não dias. Escudos protegem a corrente do Anki num dia ruim.</p>
+</div>
+</article>
+
+<article class="study">
+<div class="study-num">94<span>estudos, 8 mil pessoas</span></div>
+<div class="study-body">
+<h3>Decidir quando e onde aumenta a chance de fazer.</h3>
+<p>Planos do tipo "às 19:00, na mesa da sala, eu leio 25 min" aumentaram bastante a chance de cumprir a meta, com efeito de médio a grande.</p>
+<p class="cite">Gollwitzer e Sheeran (2006), Advances in Experimental Social Psychology</p>
+</div>
+<div class="in-app">
+<p class="in-app-label">No app</p>
+<p>Na revisão de domingo você combina o quando e o onde da semana. Os lembretes chegam nesse horário.</p>
+</div>
+</article>
+
+<article class="study">
+<div class="study-num">138<span>estudos sobre progresso</span></div>
+<div class="study-body">
+<h3>Acompanhar o progresso ajuda a chegar na meta.</h3>
+<p>Com quase 20 mil participantes, a revisão mostrou que monitorar o próprio avanço aumenta a chance de atingir metas, e mais ainda quando o avanço fica registrado.</p>
+<p class="cite">Harkin et al. (2016), Psychological Bulletin</p>
+</div>
+<div class="in-app">
+<p class="in-app-label">No app</p>
+<p>Cada sessão entra no histórico. A tela Semana mostra horas contra a meta dia a dia, e cada idioma tem previsão de término.</p>
+</div>
+</article>
+
+<article class="study">
+<div class="study-num">34%<span>contra 19% de conclusão</span></div>
+<div class="study-body">
+<h3>Quem começa com algum avanço tende a terminar.</h3>
+<p>Um cartão de 10 carimbos com 2 já marcados foi completado por 34% dos clientes. Um cartão de 8 em branco, com o mesmo esforço, por 19%.</p>
+<p class="cite">Nunes e Drèze (2006), Journal of Consumer Research</p>
+</div>
+<div class="in-app">
+<p class="in-app-label">No app</p>
+<p>Os primeiros níveis vêm rápido. O nível 2 chega no primeiro dia e o 5, em uns quatro dias.</p>
+</div>
+</article>
+</div>
+
+<p class="footnote">Os números são dos estudos citados, não de quem usa o app. O que o Linguas Discens faz é aplicar essas ideias nas metas, nos lembretes e na gamificação.</p>
+</div>
+</section>
+
+<!-- Recursos -->
+<section id="recursos" class="band" aria-labelledby="recursos-titulo">
+<div class="wrap features">
+<div class="stack-16 features-head">
+<p class="eyebrow">03 · Recursos</p>
+<h2 id="recursos-titulo" class="h2">Planilha, cronômetro e lembretes num lugar só.</h2>
+</div>
+
+<div class="feature-grid">
+
+<!-- Cronômetro -->
+<article class="timer">
+<div class="timer-top" aria-hidden="true">
+<small>Latim · Leitura</small>
+<span class="timer-clock">14:08</span>
+<div class="timer-buttons">
+<span class="timer-pause">Pausar</span>
+<span class="timer-stop">Encerrar</span>
+</div>
+</div>
+<div>
+<h3>Cronômetro que não se perde</h3>
+<p>Ele guarda o horário de início, não um contador. Se você fechar o app, o tempo continua certo. Se ficar ligado por 3 h, ele pergunta se você ainda está estudando.</p>
+</div>
+</article>
+
+<article class="feature">
+<span class="feature-icon feature-icon--green"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2" y="6" width="14" height="14" rx="2"/><path d="M8 2h12a2 2 0 0 1 2 2v12"/></svg></span>
+<h3>Piso do Anki</h3>
+<p>15 min de revisão por dia, separados da meta e marcados com um toque. Dá para marcar direto na notificação.</p>
+</article>
+
+<article class="feature">
+<span class="feature-icon feature-icon--hot"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 8a6 6 0 0 1 12 0c0 7 3 9 3 9H3s3-2 3-9"/><path d="M10.3 21a1.94 1.94 0 0 0 3.4 0"/></svg></span>
+<h3>15 tipos de lembrete</h3>
+<p>Cada um pode ser ligado ou desligado e tem horário próprio. Chegam no máximo 4 por dia, e nenhum entre 22:30 e 7:30.</p>
+</article>
+
+<article class="feature">
+<span class="feature-icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 7 13.5 15.5 8.5 10.5 2 17"/><path d="M16 7h6v6"/></svg></span>
+<h3>Previsão de término</h3>
+<p>Horas restantes divididas pela sua média das últimas 4 semanas. "No ritmo atual, latim termina em agosto."</p>
+</article>
+
+<article class="feature">
+<span class="feature-icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 18h6"/><path d="M10 22h4"/><path d="M12 2a7 7 0 0 0-4 12.7V17h8v-2.3A7 7 0 0 0 12 2z"/></svg></span>
+<h3>Dicas na hora certa</h3>
+<p>21 dicas de método, que aparecem conforme o idioma, a fase e a atividade. No máximo uma por dia.</p>
+</article>
+
+<article class="feature">
+<span class="feature-icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="3" width="7" height="7" rx="1.5"/><rect x="14" y="3" width="7" height="7" rx="1.5"/><rect x="3" y="14" width="7" height="7" rx="1.5"/><rect x="14" y="14" width="7" height="7" rx="1.5"/></svg></span>
+<h3>Widget e atalhos</h3>
+<p>O widget mostra na tela inicial quanto falta hoje e marca o Anki com um toque. Segurando o ícone do app, dá para estudar, marcar o Anki ou registrar uma sessão.</p>
+</article>
+
+<!-- Live Update -->
+<article class="feature live">
+<div class="live-copy">
+<span class="live-tag">Android 16</span>
+<h3>A sessão fica na barra de status</h3>
+<p>No Android 16, a sessão em andamento vira um Live Update, o equivalente às Live Activities do iPhone. O cronômetro aparece num chip no topo da tela enquanto você estuda. Na notificação, uma barra mostra a meta de hoje e a da semana se enchendo, e dá para pausar ou encerrar sem abrir o app.</p>
+<p class="live-note">Em versões anteriores do Android, a sessão aparece como uma notificação com barra de progresso.</p>
+</div>
+<div class="live-mock" aria-hidden="true">
+<div class="live-status">
+<span>19:42</span>
+<span class="live-chip"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="13" r="8"/><path d="M12 9v4l2 2"/><path d="M10 2h4"/></svg>14:08</span>
+</div>
+<div class="live-notif">
+<div class="live-notif-head"><span><i></i>Linguas Discens · Bloco de 25 min</span><b>14:08</b></div>
+<div class="live-notif-text">Hoje 49 min de 1h05 · semana 2h43 de 10h</div>
+<div class="live-bar"><i class="live-bar-before"></i><i class="live-bar-now"></i></div>
+<div class="live-notif-actions"><span>Pausar</span><span>Encerrar</span></div>
+</div>
+</div>
+</article>
+</div>
+</div>
+</section>
+
+<!-- Sem culpa -->
+<section aria-labelledby="culpa-titulo">
+<div class="wrap reward">
+<div class="reward-copy">
+<div class="stack-16">
+<p class="eyebrow">04 · Recompensa sem culpa</p>
+<h2 id="culpa-titulo" class="h2">O app conta o que você fez e nunca tira pontos.</h2>
+<p class="lead">XP por minuto, níveis, conquistas e achados estão lá para dar vontade de voltar. Quando um dia passa sem estudo, o app diz o que aconteceu e o que muda na meta, sem bronca.</p>
+</div>
+<div class="compare">
+<div class="compare-row">
+<div class="say say--others"><small>Outros apps</small><p>Que pena. Você perdeu sua sequência.</p></div>
+<div class="say say--ours"><small>Linguas Discens</small><p>A corrente recomeçou. Seu recorde continua: 23 dias.</p></div>
+</div>
+<div class="compare-row">
+<div class="say say--others"><small>Outros apps</small><p>Você não estudou ontem.</p></div>
+<div class="say say--ours"><small>Linguas Discens</small><p>Ontem ficou sem estudo. A meta de hoje subiu para 1h40.</p></div>
+</div>
+</div>
+</div>
+
+<!-- Títulos -->
+<div class="titles">
+<div>
+<h3>Títulos no próprio idioma</h3>
+<p class="titles-intro">Em vez de "nível 3", você vira Lēctor de latim. São oito títulos, e cada um chega com uma parte das horas estimadas do idioma.</p>
+</div>
+<ol>
+<li><span class="t-pct">0%</span><span class="t-name t-name--done">Tīrō</span><span class="t-mean">recruta</span></li>
+<li><span class="t-pct">5%</span><span class="t-name t-name--done">Discipulus</span><span class="t-mean">aluno</span></li>
+<li><span class="t-pct">15%</span><span class="t-name t-name--now">Lēctor</span><span class="t-mean">leitor</span></li>
+<li><span class="t-pct">30%</span><span class="t-name">Scrība</span><span class="t-mean">escriba</span></li>
+<li><span class="t-pct">50%</span><span class="t-name">Grammaticus</span><span class="t-mean">gramático</span></li>
+<li><span class="t-pct">70%</span><span class="t-name">Rhētor</span><span class="t-mean">professor de retórica</span></li>
+<li><span class="t-pct">85%</span><span class="t-name">Ōrātor</span><span class="t-mean">orador</span></li>
+<li><span class="t-pct">100%</span><span class="t-name">Magister</span><span class="t-mean">mestre</span></li>
+</ol>
+</div>
+</div>
+</section>
+
+<!-- Rota -->
+<section class="band" aria-labelledby="rota-titulo">
+<div class="wrap route">
+<div class="stack-16 route-copy">
+<p class="eyebrow">05 · A rota</p>
+<h2 id="rota-titulo" class="h2">Uma fila de idiomas, contada em horas.</h2>
+<p class="lead">Aprender um idioma leva centenas de horas. Por isso o app conta horas, e não dias seguidos. A rota sugerida já vem pronta, e você pode mudar a ordem, as horas e a cor ou incluir outros idiomas.</p>
+<p class="small">Cada idioma passa por duas fases. Na fase Início, o peso maior é de gramática. A partir de 15% das horas vem a fase Base, com mais leitura e escuta.</p>
+</div>
+<div class="route-list">
+<div class="lang"><span class="lang-pos">01</span><span class="lang-name">Italiano</span><div class="lang-bar"><div style="width:36%;background:#5F7F3A"></div></div><span class="lang-hours">300 h</span></div>
+<div class="lang"><span class="lang-pos">02</span><span class="lang-name">Latim</span><div class="lang-bar"><div style="width:66%;background:#8E2C3A"></div></div><span class="lang-hours">550 h</span></div>
+<div class="lang"><span class="lang-pos">03</span><span class="lang-name">Francês</span><div class="lang-bar"><div style="width:45%;background:#1F8A7A"></div></div><span class="lang-hours">370 h</span></div>
+<div class="lang"><span class="lang-pos">04</span><span class="lang-name">Grego antigo</span><div class="lang-bar"><div style="width:81%;background:#2E5EAA"></div></div><span class="lang-hours">675 h</span></div>
+<div class="lang"><span class="lang-pos">05</span><span class="lang-name">Espanhol</span><div class="lang-bar"><div style="width:22%;background:#B07D2B"></div></div><span class="lang-hours">180 h</span></div>
+<div class="lang"><span class="lang-pos">06</span><span class="lang-name">Catalão</span><div class="lang-bar"><div style="width:27%;background:#C2577A"></div></div><span class="lang-hours">220 h</span></div>
+<div class="lang"><span class="lang-pos">07</span><span class="lang-name">Polonês</span><div class="lang-bar"><div style="width:100%;background:#7B4BB0"></div></div><span class="lang-hours">830 h</span></div>
+<div class="lang"><span class="lang-pos">08</span><span class="lang-name">Grego moderno</span><div class="lang-bar"><div style="width:84%;background:#4E6E8E"></div></div><span class="lang-hours">700 h</span></div>
+<p class="route-note">Horas estimadas por idioma na rota sugerida. Total: 3.825 h.</p>
+</div>
+</div>
+</section>
+
+<!-- Dados -->
+<section aria-labelledby="dados-titulo">
+<div class="wrap data">
+<div class="data-box">
+<div class="data-copy">
+<h2 id="dados-titulo" class="h2 h2--sm">Seus dados ficam no seu celular.</h2>
+<p>Não precisa criar conta nem ter internet. Dá para exportar tudo quando quiser e levar para outro aparelho.</p>
+</div>
+<ul class="checks">
+<li><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#8F3F09" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg>Funciona sem internet</li>
+<li><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#8F3F09" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg>Backup completo em JSON, para restaurar depois</li>
+<li><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#8F3F09" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg>Sessões em CSV para a sua planilha</li>
+<li><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#8F3F09" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg>Tema claro e escuro</li>
+</ul>
+</div>
+</div>
+</section>
+
+<!-- Perguntas -->
+<section id="perguntas" aria-labelledby="perguntas-titulo">
+<div class="wrap faq">
+<div class="faq-head">
+<p class="eyebrow">06 · Perguntas</p>
+<h2 id="perguntas-titulo" class="h2 h2--sm">Antes de instalar</h2>
+</div>
+<div class="faq-list">
+<details open>
+<summary>Funciona no iPhone?<span aria-hidden="true">+</span></summary>
+<p>Por enquanto, só no Android. A instalação é pelo APK desta página.</p>
+</details>
+<details>
+<summary>Preciso estudar todos os oito idiomas?<span aria-hidden="true">+</span></summary>
+<p>Não. A rota é uma sugestão. Apague, reordene ou crie idiomas com nome, tipo e horas estimadas. Um idioma ativo recebe toda a meta; dois em paralelo dividem por porcentagem.</p>
+</details>
+<details>
+<summary>E se a semana não couber nos dias que restam?<span aria-hidden="true">+</span></summary>
+<p>A meta do dia nunca passa do teto (3 h por padrão). Quando o que falta não cabe, a semana entra em risco e o app oferece três saídas: subir o teto só nessa semana, aceitar a diferença ou levar parte dela para a próxima.</p>
+</details>
+<details>
+<summary>Dá para estudar sem gamificação?<span aria-hidden="true">+</span></summary>
+<p>Sim. O modo discreto, nas configurações, tira as animações e o resumo do fim da sessão e deixa só os números.</p>
+</details>
+</div>
+</div>
+</section>
+
+<!-- Baixar -->
+<section id="baixar" class="download" aria-labelledby="baixar-titulo">
+<div class="wrap download-inner">
+<div class="download-copy">
+<h2 id="baixar-titulo">Quantas horas por semana você quer estudar?</h2>
+<p>É a primeira coisa que o app pergunta. O resto ele calcula.</p>
+</div>
+<div class="download-actions">
+<a class="btn-apk" href="linguas-discens-1.0.0-arm64-v8a.apk" download type="application/vnd.android.package-archive">
+<svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><path d="M7 10l5 5 5-5"/><path d="M12 15V3"/></svg>
+<span class="btn-apk-text"><b>Baixar para Android</b><small>APK · 41 MB · celulares de 64 bits</small></span></a>
+<a class="apk-alt" href="linguas-discens-1.0.0.apk" download type="application/vnd.android.package-archive">Versão universal para aparelhos antigos (114 MB)</a>
+<span class="apk-version">Versão 1.0.0 · o Android pode pedir permissão para instalar o arquivo</span>
+</div>
+</div>
+</section>
+</main>
+
+<footer class="site-footer">
+<div class="wrap footer-inner">
+<span><b>Linguas Discens</b> · LLR, Language Learning Routine</span>
+<span>Discens: do latim, "aquele que aprende".</span>
+</div>
+</footer>
+
+</body>
+</html>

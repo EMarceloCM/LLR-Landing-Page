@@ -1,0 +1,3 @@
+# Os APKs vão para a release do GitHub, não para o repositório.
+*.apk
+_site/

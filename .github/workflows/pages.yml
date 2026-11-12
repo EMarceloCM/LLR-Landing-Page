@@ -1,0 +1,67 @@
+name: Publicar site
+
+# Publica a pasta site/ no GitHub Pages.
+# Os APKs não ficam no repositório (o universal passa do limite de 100 MB do GitHub):
+# o workflow baixa os da release mais recente e os coloca ao lado do index.html.
+
+on:
+  push:
+    branches: [main]
+  release:
+    types: [published]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+concurrency:
+  group: pages
+  cancel-in-progress: false
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v5
+
+      - name: Copiar o site
+        run: |
+          mkdir _site
+          cp -r site/. _site/
+          rm -f _site/*.apk
+
+      - name: Baixar os APKs da release mais recente
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: gh release download --repo "${{ github.repository }}" --pattern '*.apk' --dir _site
+
+      - name: Conferir os links de download
+        run: |
+          missing=0
+          for apk in $(grep -oE 'href="[^"]+\.apk"' _site/index.html | sed -E 's/href="(.*)"/\1/' | sort -u); do
+            if [ -f "_site/$apk" ]; then
+              echo "ok: $apk ($(du -h "_site/$apk" | cut -f1))"
+            else
+              echo "::error::O index.html aponta para $apk, mas esse arquivo não está na release mais recente."
+              missing=1
+            fi
+          done
+          exit $missing
+
+      - uses: actions/configure-pages@v5
+
+      - uses: actions/upload-pages-artifact@v4
+        with:
+          path: _site
+
+  deploy:
+    needs: build
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - id: deployment
+        uses: actions/deploy-pages@v4
